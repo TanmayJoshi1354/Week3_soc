@@ -1,0 +1,40 @@
+.navbar{
+    justify-content: space-between;
+}
+
+.head{
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+span{
+    padding-right: 1rem;
+}
+
+.heading{
+    text-align: center;
+    padding-top: 50px;
+}
+
+h1{
+    font-size: 40px;
+}
+
+.desc{
+    text-align: center;
+    padding-top: 5px;
+    font-size: 20px;
+}
+
+.select{
+    padding-top: 30px;
+    text-align: center;
+    
+}
+
+.drive{
+    text-align: center;
+    padding-top: 10px;
+    padding-right: px;
+}

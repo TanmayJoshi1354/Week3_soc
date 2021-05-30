@@ -1,0 +1,42 @@
+<mat-toolbar color = 'primary' class = 'navbar'>
+    <div>PDF Manager</div>
+    <div>
+        <span (click)="redirect('Merge')">Merge PDF</span>
+        <span (click)="redirect('Split')">Split PDF</span>
+        <span (click)="redirect('Compress')">Compress PDF</span>
+    </div>
+</mat-toolbar>
+
+<div class="heading" [ngSwitch]="purpose"><h1>
+    <div *ngSwitchCase="'Merge'">Merge PDF files</div>
+    <div *ngSwitchCase="'Split'">Split a PDF file</div>
+    <div *ngSwitchCase="'Compress'">Compress PDF files</div>
+    <div *ngSwitchCase="'ConvertWord'">PDF to Word converter</div>
+    <div *ngSwitchCase="'ConvertExcel'">PDF to Excel converter</div>
+    <div *ngSwitchCase="'ConvertPowerpoint'">PDF to Powerpoint converter</div>
+</h1></div>
+
+<div class="desc" [ngSwitch]="purpose">
+    <div *ngSwitchCase="'Merge'">Upload PDFs in the order you want</div>
+    <div *ngSwitchCase="'Split'">Separate Pages of a PDF</div>
+    <div *ngSwitchCase="'Compress'">Upload PDFs in the order you want</div>
+    <div *ngSwitchCase="'ConvertWord'">Convert your PDF to a Word document</div>
+    <div *ngSwitchCase="'ConvertExcel'">Convert your PDF to an Excel Document</div>
+    <div *ngSwitchCase="'ConvertPowerpoint'">Convert your PDF to Powerpoint</div>    
+ </div>
+
+<div class="select" >
+        <button mat-flat-button color="primary">
+           <p style="padding-left: 40px;padding-right: 40px;padding-top: 15px;padding-bottom: 10px;font-size: 30px;"> Select PDF files</p>
+        </button>
+</div>
+<div class="drive">
+    <button mat-mini-fab><mat-icon>attach_file</mat-icon></button>
+    <button mat-mini-fab><mat-icon>cloud_upload</mat-icon></button>
+</div>
+
+    
+
+
+
+<router-outlet></router-outlet>
