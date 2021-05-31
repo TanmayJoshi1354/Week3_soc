@@ -6,6 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { UploadPageComponent } from './upload-page/upload-page.component';
+import {MatMenuModule} from '@angular/material/menu';
+
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
+import { NgxFileDropModule } from 'ngx-file-drop';
 
 @NgModule({
   declarations: [
@@ -16,7 +23,11 @@ import { UploadPageComponent } from './upload-page/upload-page.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    HttpClientModule,
+    NgxFileDropModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

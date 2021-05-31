@@ -38,3 +38,8 @@ h1{
     padding-top: 10px;
     padding-right: px;
 }
+
+.center{
+    border-style: none;
+    background-color:#3f51b5;
+}

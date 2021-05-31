@@ -4,6 +4,12 @@
         <span (click)="redirect('Merge')">Merge PDF</span>
         <span (click)="redirect('Split')">Split PDF</span>
         <span (click)="redirect('Compress')">Compress PDF</span>
+        <span [matMenuTriggerFor]="Convert">Convert PDF +</span>
+        <mat-menu #Convert="matMenu" yPosition="below">
+            <span mat-menu-item (click)="redirect('ConvertWord')">Word</span>
+            <span mat-menu-item (click)="redirect('ConvertExcel')">Excel</span>
+            <span mat-menu-item (click)="redirect('ConvertPowerpoint')">Powerpoint</span>
+        </mat-menu>
     </div>
 </mat-toolbar>
 
@@ -30,13 +36,29 @@
            <p style="padding-left: 40px;padding-right: 40px;padding-top: 15px;padding-bottom: 10px;font-size: 30px;"> Select PDF files</p>
         </button>
 </div>
-<div class="drive">
-    <button mat-mini-fab><mat-icon>attach_file</mat-icon></button>
-    <button mat-mini-fab><mat-icon>cloud_upload</mat-icon></button>
+
+<div class="center" style="width:23.6%; margin-left: 38.4%;margin-right: 38.4%;margin-top: 20px;" >
+    <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" 
+    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" accept=".pdf" >
+        <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector" >
+          <p style="color: beige;font-size: larger;">Drop files here</p>
+          <button styles="margin-left=10px" type="button" (click)="openFileSelector()" style="background-color:#3f51b5;padding: 10px;margin: 20px;border-color: beige;">
+            <p style="color:beige ;font-size: 15px;">Browse</p>  
+          </button>
+        </ng-template>
+    </ngx-file-drop>
+    <div class="upload-table">
+        <table class="table">
+            <tbody class="upload-name-style">
+                <tr *ngFor="let item of files; let i=index">
+                    <td style="color: beige;"><strong>{{ item.relativePath }}</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
+
+
     
-
-
-
 <router-outlet></router-outlet>
